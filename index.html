@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Caio & Lu</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
+			@font-face {
+				font-family: mali;
+				src: url(assets/Mali.ttf);
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: mali;
+				font-family: 'Mali', cursive;
+				/* outline: 1px solid; */
+			}
+
+			body {
+				width: 100vw;
+				height: 100vh;
+				background-image: url(assets/background.jpg);
+				background-size: cover;
+				background-position: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				min-height: 100vh;
+        overflow: hidden;
+			}
+
+
+
+			.painel{
+				width: 450px;
+				height: 300px;
+				background-color: #bb51c4eb;
+				box-shadow: 0 0 15px 0 #bb51c4eb ;
+				border: 4px solid black;
+				border-radius: 8px;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.main {
+				height: 200px;
+				width: 400px;
+				background: transparent;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.question {
+				margin-bottom: 40px;
+				color: white;
+				text-shadow: 0 0  10px #000;
+
+			}
+
+			.options {
+				width: 300px;
+				display: flex;
+				
+			}
+
+			button {
+				width: 130px;
+				height: 50px;
+				border: none;
+				border-radius: 40px;
+				box-shadow: 0 0 10px;
+
+				transition: 300ms;
+
+				cursor: pointer;
+
+				font-size: 1.4em;
+				font-weight: 800;
+				color: rgb(38, 32, 32);
+				margin: 10px;
+			}
+
+
+			#positive:hover{
+			transform: scale(1.2);
+			}
+			#negative{
+				top: 50%;
+				left: 50%;
+			}
+
+/* =================================================== */
+.gratters{
+	width: 90%;
+	display: none;
+	color: black;
+	flex-direction: column;
+	justify-content: center;
+}
+.gratters h1{
+	color:#ffffff;
+	margin-bottom: 20px;
+	text-align: center;
+	text-shadow: 0 0  10px #000;
+
+}
+.gratters img{
+	position: relative;
+	width: 200px;
+	margin: 0 auto;
+	animation: alternate infinite float 500ms;
+}
+
+
+
+		</style>
+	</head>
+
+	<body>
+
+		<div class="painel">
+			<div class="main" id="main">
+				<h1 class="question">Namora Comigo?</h1>
+				<div class="options">
+					<button class="heart" id="positive">Sim :)</button>
+					<button id="negative">Não</button>
+				</div>
+			</div>
+
+			<div class="gratters" id="gratters">
+				<h1 class="">Te adoro!!!!</h1>
+				<img src="assets/heath.png" alt="">
+			</div>
+		</div>
+		<script>
+			var height = window.innerHeight-50
+			var width = window.innerWidth-100
+			var btnNegative = document.getElementById( "negative" );
+			var btnNegativeStyle = btnNegative.style
+
+			btnNegative.addEventListener( "mouseover", randomPosition )
+			btnNegative.addEventListener( "click", randomPosition )
+
+			 function randomPosition(){
+				btnNegativeStyle.top = Math.floor( Math.random() * height) + "px";
+				btnNegativeStyle.left = Math.floor( Math.random() * width) + "px";
+				btnNegativeStyle.position = "absolute"
+			} 
+
+			var btnPositive = document.getElementById( "positive" );
+
+			btnPositive.addEventListener( "click", () => {
+
+				main.style.display = "none"
+				gratters.style.display = "flex"
+
+			} )
+
+
+
+		</script>
+	</body>
+
+</html>
